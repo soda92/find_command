@@ -9,7 +9,7 @@ if __name__ == "__main__":
     found = False
     for path in paths:
         if not os.path.exists(path):
-            print("cannot find: ", path)
+            # print("cannot find: ", path)
             continue
         files = os.listdir(path)
         for file in files:
