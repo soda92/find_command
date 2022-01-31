@@ -1,2 +1,3 @@
 # find_command
-my custom `where` command.
+
+`which` command on Windows, implemented using Python.

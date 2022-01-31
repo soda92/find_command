@@ -1,4 +1,5 @@
 import os, sys
+from termcolor import colored
 
 if __name__ == "__main__":
     paths = os.environ["PATH"].split(";")
@@ -16,7 +17,8 @@ if __name__ == "__main__":
             dot_pos = file.rfind(".")
             filename_no_ext = file[:dot_pos]
             if filename_no_ext == req_command:
-                print(os.path.join(path, file))
+                print(path, os.path.sep, sep="", end="")
+                print(colored(filename_no_ext, "green"), file[dot_pos:], sep="")
                 found = True
     if not found:
-        print("command not found.")
+        print(colored("command not found.", "red"))
