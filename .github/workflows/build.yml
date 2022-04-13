@@ -19,5 +19,4 @@ jobs:
       - name: Upload Distributions
         uses: actions/upload-artifact@v2
         with:
-          name: w-build
-          path: build/x86_64-pc-windows-msvc/debug/install
+          path: build/x86_64-pc-windows-msvc/debug/install/w.exe
