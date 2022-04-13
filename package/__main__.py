@@ -1,7 +1,8 @@
 import os, sys
 from termcolor import colored
 
-if __name__ == "__main__":
+
+def main():
     paths = os.environ["PATH"].split(";")
     if len(sys.argv) != 2:
         print("usage: where_command [command]")
@@ -22,3 +23,7 @@ if __name__ == "__main__":
                 found = True
     if not found:
         print(colored("command not found.", "red"))
+
+
+if __name__ == "__main__":
+    main()

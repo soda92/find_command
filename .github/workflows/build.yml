@@ -1,0 +1,23 @@
+on:
+  push:
+  pull_request:
+
+# on:
+#   push:
+#     tags:
+#        - '*'
+
+jobs:
+  build:
+    runs-on: 'windows-latest'
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: python3 -m pip install pyoxidizer
+      - run: pyoxidizer run make_install
+
+      - name: Upload Distributions
+        uses: actions/upload-artifact@v2
+        with:
+          name: w-build
+          path: build/x86_64-pc-windows-msvc/debuginstall
